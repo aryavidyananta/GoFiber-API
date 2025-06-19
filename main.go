@@ -26,6 +26,7 @@ func main() {
 		AllowMethods: "GET,POST,PUT,DELETE,OPTIONS",
 		AllowHeaders: "Origin, Content-Type, Accept, Authorization",
 	}))
+
 	jwtMidd := jwtMid.New(jwtMid.Config{
 		SigningKey: jwtMid.SigningKey{Key: []byte(cnf.Jwt.Key)},
 		ErrorHandler: func(ctx *fiber.Ctx, err error) error {
